@@ -1,25 +1,30 @@
 <template>
     <response>
-      <div slot="sm">
+      <div slot="mb" class="mb">
           <div class="sider">
-            <transition name="fade"   v-on:enter="Enter"  v-on:leave="Leave">
-              <div class="siderbar" ref="siderbar" v-show="myVisible">
-                <ul class="sider-menu" v-for="(item,index) in list" :key="item.id">
-                  <li @click="routerPush(item.route)">{{item.text}}</li>
-                </ul>
-              </div>
-            </transition>
+            <esiderbar :myVisible="myVisible"  v-on:listenView="changeView" :list="list"></esiderbar>
             <div class='menuCover' @click='toggleMenu'  v-show="myVisible"></div>
             <div class="main">
               <div class="siderIcon"><i class="siderIconImg" @click="toggleShow"></i></div>
+              <router-view></router-view>
             </div>
           </div>
       </div>
-      <div slot="lg">22222</div>
+      <div slot="pc" class="pc">
+        <eheader :list="list" class="eheader"></eheader>
+        <router-view></router-view>
+        <efooter class="efooter"></efooter>
+      </div>
     </response>
 </template>
 <script>
   import response from '@/components/response'
+
+  import eheader from '@/components/header'
+  import efooter from '@/components/footer'
+  import earticle from '@/components/article'
+
+  import esiderbar from '@/components/siderbar'
 
   export default {
     data(){
@@ -29,12 +34,12 @@
           {
             "id":1,
             "text":'首页',
-            "route":'/index'
+            "route":'/'
           },
           {
             "id":2,
             "text":'文章页',
-            "route":'/article'
+            "route":'/list'
           },
           {
             "id":3,
@@ -54,7 +59,7 @@
         ]
       }
     },
-    components:{response},
+    components:{response,eheader,efooter,earticle,esiderbar},
     methods:{
       toggleMenu:function () {
         this.myVisible=!this.myVisible;
@@ -63,14 +68,12 @@
           this.myVisible=!this.myVisible;
       },
       routerPush:function (ro) {
-          console.log(ro);
+        this.$router.push({path:ro});
       },
-      Enter:function (el) {
-        this.$refs.siderbar.style.left =0+'px';
-      },
-      Leave:function (el) {
-        this.$refs.siderbar.style.left =-180+'px';
-      },
+      changeView:function () {
+        this.myVisible=!this.myVisible;
+      }
+
 
 
     },
@@ -78,43 +81,13 @@
 </script>
 <style scoped lang="less">
   @media screen and (max-width:768px){
-    /* 可以设置不同的进入和离开动画 */
-    /* 设置持续时间和动画函数 */
-    .fade-enter-active {
-      transition: all .5s ease;
-    }
-    .fade-leave-active {
-      transition: all .5s ease;
-    }
-    .fade-enter, .slide-fade-leave-to
-      /* .slide-fade-leave-active for below version 2.1.8 */ {
-      transform: translateX(-180px);
-      opacity: 0;
+    .mb{
+      width:100%;height:100%
     }
     .sider{
       width:100%;
       height:100%;
       z-index:2;
-    }
-    .siderbar{
-      position:absolute;
-      top:0;bottom:0;
-      width:180px;
-      left:0;
-      background-color: #2c3e50;
-      z-index:4;
-      .sider-menu{
-        position: relative;
-        list-style:none;
-        font-size:14px;
-        li{
-          color:#ffffff;
-        }
-        li:hover{
-          color:#42b983;
-          cursor: pointer;
-        }
-      }
     }
     .menuCover{
       position:absolute;
@@ -143,6 +116,14 @@
     }
   }
   @media screen and (min-width:768px){
+    .pc{
+      width:100%;height:100%
+    }
+    .efooter{
+      position:absolute;
+      bottom:0;
+      left:0;right:0;
+    }
     .sider{
       width:100%;
       height:80px;
@@ -193,9 +174,6 @@
       display: inline-block;
       background: url('../assets/images/siderbar.png')no-repeat ;
     }
-
   }
-
-
 
 </style>

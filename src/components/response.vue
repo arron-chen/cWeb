@@ -1,10 +1,10 @@
 <template>
-    <div>
+    <div class="response">
       <template v-if="Dwidth < 768">
-        <slot name="sm"></slot>
+        <slot name="mb"></slot>
       </template>
       <template v-else="Dwidth < 1080">
-        <slot name="lg"></slot>
+        <slot name="pc"></slot>
       </template>
     </div>
 </template>
@@ -21,13 +21,13 @@
     mounted () {
       this.width= document.body.offsetWidth;
       window.addEventListener('resize',() => {
-        console.log(document.body.offsetWidth)
+        //console.log(document.body.offsetWidth)
         this.width = document.body.offsetWidth;
       })
     },
     computed:{
       Dwidth:function () {
-        return this.width
+        return this.width;
       }
     },
     methods: {
@@ -35,6 +35,8 @@
     }
   }
 </script>
-<style lang="less">
-
+<style lang="less" scoped>
+  .response{
+    width:100%;height:100%;
+  }
 </style>
