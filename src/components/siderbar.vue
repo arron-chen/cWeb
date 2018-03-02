@@ -63,7 +63,7 @@
     top:0;bottom:0;
     width:180px;
     left:0;
-    background-color: #2c3e50;
+    background: rgba(44,62,80,1);
     z-index:4;
   .sider-menu{
     position: relative;
