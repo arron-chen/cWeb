@@ -1,6 +1,6 @@
 <template>
     <header class="header" ref="siderbar" >
-      <ul>
+      <ul class="commonWidth">
         <li v-for="(item,index) in list" :key="item.id" @click="routerPush(item.route)">{{item.text}}</li>
       </ul>
     </header>
@@ -30,10 +30,12 @@
     line-height:50px;
     margin:0;
     background: rgba(0,0,0,.7);
+
     ul {
+      width:1000px;
+      margin:0 auto;
+      height:50px;
       list-style:none;
-      width:100%;
-      background-color: #f5f6fa;
       li{
         color: #fffdfb;
         float:left;
