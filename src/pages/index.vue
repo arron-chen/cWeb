@@ -23,7 +23,6 @@
 
   import eheader from '@/components/header'
   import efooter from '@/components/footer'
-  import earticle from '@/components/article'
 
   import esiderbar from '@/components/siderbar'
 
@@ -39,28 +38,28 @@
           },
           {
             "id":2,
-            "text":'文章页',
+            "text":'关于',
             "route":'/list'
           },
           {
             "id":3,
-            "text":'作品集',
+            "text":'笔记',
             "route":'/work'
           },
           {
             "id":4,
-            "text":'关于我们',
+            "text":'魔方',
             "route":'/about'
           },
           {
             "id":5,
-            "text":'联系我们',
+            "text":'留言板',
             "route":'/contact'
           },
         ]
       }
     },
-    components:{response,eheader,efooter,earticle,esiderbar},
+    components:{response,eheader,efooter,esiderbar},
     methods:{
       toggleMenu:function () {
         this.myVisible=!this.myVisible;

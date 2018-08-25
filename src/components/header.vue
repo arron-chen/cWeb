@@ -9,7 +9,6 @@
   export default{
     data(){
      return {
-
      }
     },
     props:{
@@ -25,17 +24,18 @@
   }
 </script>
 <style scoped lang="less">
+  @commonwidth:980px;
   .header{
     height:50px;
     line-height:50px;
-    margin:0;
-    background: rgba(0,0,0,.7);
-
+    display: flex;
+    justify-items: center;
     ul {
-      width:1000px;
+      width:@commonwidth;
       margin:0 auto;
       height:50px;
       list-style:none;
+      background: rgba(0,0,0,.7);
       li{
         color: #fffdfb;
         float:left;

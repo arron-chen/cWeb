@@ -1,11 +1,11 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import index from '@/views/index'
+import index from '@/pages/index'
 
-import about from '@/views/about'
-import list from '@/views/list'
-import work from '@/views/works'
-import contact from '@/views/contact'
+import about from '@/pages/about'
+import list from '@/pages/list'
+import work from '@/pages/works'
+import contact from '@/pages/contact'
 
 Vue.use(Router)
 

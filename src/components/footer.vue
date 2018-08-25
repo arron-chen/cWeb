@@ -34,7 +34,7 @@
           </a>
         </li>
       </ul>
-      <span >&copy;2017-2018 copyright all reservered  </span>
+      <span >备案号：粤ICP备18001531号  </span>
     </footer>
 </template>
 <script>
