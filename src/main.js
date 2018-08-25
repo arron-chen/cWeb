@@ -3,8 +3,7 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
-import '@/assets/css/normalize.css'
-import '@/assets/font-awesome/css/font-awesome.css'
+
 
 Vue.config.productionTip = false
 

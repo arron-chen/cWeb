@@ -18,6 +18,7 @@
     </response>
 </template>
 <script>
+  import "../assets/css/normalize.css";
   import response from '@/components/response'
 
   import eheader from '@/components/header'
@@ -112,7 +113,7 @@
       width:100%;
       height:100%;
       display: inline-block;
-      background: url('../assets/images/siderbar.png')no-repeat ;
+      //background: url('../assets/images/siderbar.png')no-repeat ;
     }
   }
   @media screen and (min-width:768px){
@@ -172,7 +173,7 @@
       width:100%;
       height:100%;
       display: inline-block;
-      background: url('../assets/images/siderbar.png')no-repeat ;
+      //background: url('../assets/images/siderbar.png')no-repeat ;
     }
   }
 
