@@ -1,5 +1,6 @@
 <template>
     <div class="about">
+      <eheader></eheader>
       <section>
         <div class="banner">
           <h3>About</h3>
@@ -14,14 +15,15 @@
     </div>
 </template>
 <script>
-  import efooter from '@/components/footer'
+  import eheader from '@/components/common/header'
+  import efooter from '@/components/common/footer'
   export default {
     data(){
       return {
         msg:'jh'
       }
     },
-    components:{efooter}
+    components:{eheader,efooter}
 
   }
 </script>
