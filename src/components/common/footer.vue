@@ -15,14 +15,12 @@
     margin:0 auto;
     height:30px;
     text-align: center;
-    background: rgba(255,255,255,.1);
+    background: #262627;
+    color:#fff;
     display: flex;
     justify-content: center;
-    bottom:0;
-    left:0;right:0;
-    position: absolute;
     span{
-      color:#000;
+      color:#fff;
     }
     ul{
       width:100%;
@@ -33,6 +31,8 @@
         padding-left: 5px;
         display:inline-block;
         a{
+          color:#fff;
+          text-decoration: none;
           i:hover{
             background-color: #42b983;
             border-radius:50%;
