@@ -34,6 +34,13 @@
        ]
       }
     },
+    mounted(){
+      this.$http.post('/news').then((res)=>{
+        console.log(res)
+      }).catch((e)=>{
+        console.log(e)
+      });
+    },
     components:{response,eheader,efooter,ebanner},
     methods:{
       toggleMenu:function () {
@@ -62,7 +69,6 @@
     display: flex;
     justify-content: space-between;
     width:@commonwidth;
-    min-height: 700px;
     margin:0 auto;
     .main-left{
       width:70%;

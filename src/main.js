@@ -7,6 +7,11 @@ import router from './router'
 import "./assets/css/normalize.css"
 Vue.config.productionTip = false
 
+import axios from 'axios';
+Vue.prototype.$http = axios;
+
+import mockdata from "./mock";
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
