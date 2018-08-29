@@ -16,9 +16,14 @@ export default {
   }*/
   html,body{
     width:100%;height:100%;
+
+  }
+  html{
+    font-size: 10px;
   }
   body{
     background-color: #f2f2f2;
+    font-size:14px;
   }
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;

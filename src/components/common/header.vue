@@ -35,11 +35,11 @@
   .header{
     width: @commonwidth;
     margin: 0 auto;
-    height:60px;
+    height:6rem;
     line-height:60px;
     display: flex;
     justify-content: space-between;
-    background: rgba(0,0,0,.7);
+    background: radial-gradient(circle,#666,#000);
     .header-left{
       line-height: 50px;
       img{

@@ -5,7 +5,14 @@
       <div class="main">
         <div class="main-left">
           <ul>
-            <li v-for="(item, index) in cards">{{item.title}}</li>
+            <li v-for="(item, index) in cards" :key="item.id">
+              <div class="item-img"> <img :src="item.thumbnail_pic"></div>
+              <div class="item-cont">
+                <div class="item-cont-title">{{item.title}}</div>
+                <div class="item-cont-outline">{{item.outline}}</div>
+                <div class="item-cont-tool">{{item.date}}</div>
+              </div>
+            </li>
           </ul>
         </div>
         <div class="main-right">b</div>
@@ -24,39 +31,26 @@
   export default {
     data(){
       return {
-       cards:[
-         {"id":1,"title":"es6语法概要","outline":"","createtime":"","category":""},
-         {"id":2,"title":"javascript高级编程","outline":"","createtime":"","category":""},
-         {"id":3,"title":"高级程序设计12","outline":"","createtime":"","category":""},
-         {"id":4,"title":"前端开发工具优选","outline":"","createtime":"","category":""},
-         {"id":5,"title":"程序员男颜知己","outline":"","createtime":"","category":""},
-
-       ]
+       cards:[]
       }
     },
+    created(){},
     mounted(){
       this.$http.post('/news').then((res)=>{
-        console.log(res)
+        this.cards = res.data.cards;
+        console.log(res);
       }).catch((e)=>{
         console.log(e)
       });
     },
+    filters: {
+
+    },
     components:{response,eheader,efooter,ebanner},
+    computed:{
+
+    },
     methods:{
-      toggleMenu:function () {
-        this.myVisible=!this.myVisible;
-      },
-      toggleShow:function () {
-          this.myVisible=!this.myVisible;
-      },
-      routerPush:function (ro) {
-        this.$router.push({path:ro});
-      },
-      changeView:function () {
-        this.myVisible=!this.myVisible;
-      }
-
-
 
     },
   }
@@ -76,9 +70,42 @@
       ul{
         li{
           width:100%;
-          height:180px;
+          height:220px;
           background-color: rgba(255,255,255,.5);
           margin:0 0 20px 0;
+          display: flex;
+          justify-content: space-between;
+          border-radius:3px;
+          box-shadow: 5px 10px 10px rgba(0,0,0,.1);
+          .item-img{
+            padding:20px 0 20px 20px;
+            img{
+              width:270px;
+              height:180px;
+            }
+          }
+          .item-cont{
+            padding:20px;
+            flex:1;
+            display: flex;
+            flex-direction: column;
+            .item-cont-title{
+              font-weight: bold;
+              font-size:16px;
+              height:30px;
+              line-height: 30px;
+              border-bottom:2px solid #efefef;
+              overflow: hidden;
+
+            }
+            .item-cont-outline{
+              flex: 1;
+              overflow: hidden;
+            }
+            .item-cont-tool{
+              height:30px;
+            }
+          }
         }
       }
     }
