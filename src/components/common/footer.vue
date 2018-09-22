@@ -21,6 +21,13 @@
     justify-content: center;
     span{
       color:#fff;
+      a{
+        color:#fff;
+        &:hover{
+          text-decoration: none;
+          color:#efefef;
+        }
+      }
     }
     ul{
       width:100%;

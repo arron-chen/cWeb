@@ -15,7 +15,24 @@
             </li>
           </ul>
         </div>
-        <div class="main-right">b</div>
+        <div class="main-right">
+          <div class="right-search">
+            <input placeholder="输入搜索内容">
+            <button>搜索</button>
+          </div>
+          <div class="right-hot">
+            <h3>热门文章</h3>
+            <ul>
+              <li></li>
+            </ul>
+          </div>
+          <div class="right-tag">
+            <h3>云标签</h3>
+            <ul>
+              <li></li>
+            </ul>
+          </div>
+        </div>
       </div>
       <efooter></efooter>
     </div>
@@ -42,6 +59,7 @@
       }).catch((e)=>{
         console.log(e)
       });
+      this.$store.dispatch('getIndex')
     },
     filters: {
 
@@ -112,6 +130,42 @@
     .main-right{
       width:30%;
       padding:20px;
+      .right-search{
+        position: relative;
+        padding:0 0 20px 0;
+        input{
+          height:30px;
+          width: 78%;
+          border-top-left-radius: 5px;
+          border-bottom-left-radius: 5px;
+          border:1px solid #efefef;
+          outline: none;
+          text-indent: 10px;
+        }
+        button{
+          width:20%;
+          height:30px;
+          border:1px solid #efefef;
+          border-top-right-radius: 5px;
+          border-bottom-right-radius: 5px;
+          outline: none;
+        }
+      }
+      .right-hot{
+        padding: 0 5px 0 5px;
+        background: rgba(255,255,255,.5);
+        h3{
+          font-weight: bold;
+          font-size:16px;
+          width:100%;
+          border-bottom:1px solid #efefef;
+          padding:5px 0 5px 0;
+        }
+
+      }
+      .right-tag{
+
+      }
     }
   }
 }

@@ -36,7 +36,7 @@
     width: @commonwidth;
     margin: 0 auto;
     height:6rem;
-    line-height:60px;
+    line-height:6rem;
     display: flex;
     justify-content: space-between;
     background: radial-gradient(circle,#666,#000);
