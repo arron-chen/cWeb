@@ -133,19 +133,21 @@
       .right-search{
         position: relative;
         padding:0 0 20px 0;
+        display: flex;
+        justify-content: space-between;
         input{
           height:30px;
-          width: 78%;
+          width: 80%;
           border-top-left-radius: 5px;
           border-bottom-left-radius: 5px;
-          border:1px solid #efefef;
+          border:none;
           outline: none;
           text-indent: 10px;
         }
         button{
           width:20%;
           height:30px;
-          border:1px solid #efefef;
+          border:none;
           border-top-right-radius: 5px;
           border-bottom-right-radius: 5px;
           outline: none;
