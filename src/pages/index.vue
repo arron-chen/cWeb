@@ -23,13 +23,19 @@
           <div class="right-hot">
             <h3>热门文章</h3>
             <ul>
-              <li></li>
+              <li v-for="(item,index) in hots">
+                <img :src="item.thumbnail_pic">
+                <div class="right-hot-cont">
+                  <h3>{{item.title}}</h3>
+                  <div>{{item.date}}</div>
+                </div>
+              </li>
             </ul>
           </div>
           <div class="right-tag">
             <h3>云标签</h3>
             <ul>
-              <li></li>
+              <li v-for="(item,index) in tags" :style="{background:item.color}"><label>{{item.label}}</label><i>({{item.number}})</i></li>
             </ul>
           </div>
         </div>
@@ -48,13 +54,17 @@
   export default {
     data(){
       return {
-       cards:[]
+       cards:[],
+        hots:[],
+        tags:[]
       }
     },
     created(){},
     mounted(){
       this.$http.post('/news').then((res)=>{
         this.cards = res.data.cards;
+        this.hots = res.data.hots;
+        this.tags =res.data.tags;
         console.log(res);
       }).catch((e)=>{
         console.log(e)
@@ -156,17 +166,60 @@
       .right-hot{
         padding: 0 5px 0 5px;
         background: rgba(255,255,255,.5);
+        box-shadow: 1px 2px 6px rgba(63,74,105,.16);
+
+        h3{
+          font-weight: bold;
+          font-size:16px;
+          border-bottom:1px solid #efefef;
+          padding:10px 0 10px 10px;
+        }
+        ul{
+          padding: 5px 10px;
+          border-radius: 3px;
+          margin-bottom:20px;
+          li{
+            display: flex;
+            justify-content: space-between;
+            padding:15px 0;
+            border-bottom:1px dashed #efefef;
+            &:last-child{
+              border-bottom:none;
+            }
+            .right-hot-cont{
+             width:100%;
+              padding:0 10px;
+              h3{
+                border:none;
+                font-size: 14px;
+              }
+            }
+
+          }
+        }
+
+      }
+      .right-tag{
+        padding: 0 5px 0 5px;
+        background: rgba(255,255,255,.5);
         h3{
           font-weight: bold;
           font-size:16px;
           width:100%;
           border-bottom:1px solid #efefef;
-          padding:5px 0 5px 0;
+          padding:10px 0 10px 10px;
         }
-
-      }
-      .right-tag{
-
+        ul{
+          li{
+            display: inline-block;
+            border-radius: 5px;
+            margin:5px ;
+            padding:3px 10px;
+            background: #42b983;
+            color:#ffffff;
+            label{}
+          }
+        }
       }
     }
   }
