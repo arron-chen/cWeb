@@ -71,7 +71,6 @@
   }
 </script>
 <style scoped lang="less">
-
   @commonwidth:110rem;
 .content{
   width:100%;height:auto;

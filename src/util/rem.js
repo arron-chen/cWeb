@@ -1,9 +1,9 @@
 function htRem() {
   var ww = document.documentElement.clientWidth;
-  if (ww > 750) {
-    ww = 750;
+  if (ww > 1200) {
+    ww = 1200;
   }
-  document.documentElement.style.fontSize = ww / 60 + "px";
+  document.documentElement.style.fontSize = ww / 75 + "px";
 }
 
 htRem();

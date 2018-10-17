@@ -21,13 +21,24 @@ export default {
     .main-left{
       width:100% !important;
     }
+    .main-left ul li img{
+      width:20rem!important;
+      height:14rem!important;
+    }
     body {font-size:12px!important;}
   }
-  @media screen and (min-width:600px) and (max-width:900px){
-    body {font-size:12px!important;}
+  @media screen and (min-width:600px) and (max-width:850px){
+    .main-right{display: none}
+    .main-left{
+      width:40rem !important;
+    }
+    body {font-size:13px!important;}
+  }
+  @media screen and (min-width:800px) and (max-width:900px){
+    body {font-size:14px!important;}
   }
   @media screen and (min-width:900px) {
-    body {font-size:14px!important;}
+    body {font-size:16px!important;}
   }
   html,body{
     width:100%;height:100%;
