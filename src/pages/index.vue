@@ -5,7 +5,7 @@
       <div class="main">
         <div class="main-left">
           <ul>
-            <li v-for="(item, index) in cards" :key="item.id">
+            <li v-for="(item, index) in articles" :key="item.id">
               <div class="item-img"> <img :src="item.thumbnail_pic"></div>
               <div class="item-cont">
                 <div class="item-cont-title">{{item.title}}</div>
@@ -51,32 +51,19 @@
 
   import ebanner from "@/components/index/banner"
 
+  import {mapState} from 'vuex'
   export default {
     data(){
-      return {
-       cards:[],
-        hots:[],
-        tags:[]
-      }
+      return {}
     },
     created(){},
     mounted(){
-      this.$http.post('/news').then((res)=>{
-        this.cards = res.data.cards;
-        this.hots = res.data.hots;
-        this.tags =res.data.tags;
-        console.log(res);
-      }).catch((e)=>{
-        console.log(e)
-      });
-      this.$store.dispatch('getIndex')
+      this.$store.dispatch('getCacheAll')
     },
-    filters: {
-
-    },
+    filters: {},
     components:{response,eheader,efooter,ebanner},
     computed:{
-
+      ...mapState(['articles','hots','tags'])
     },
     methods:{
 
@@ -84,21 +71,22 @@
   }
 </script>
 <style scoped lang="less">
-  @commonwidth:1100px;
+
+  @commonwidth:110rem;
 .content{
   width:100%;height:auto;
   .main{
     display: flex;
     justify-content: space-between;
-    width:@commonwidth;
     margin:0 auto;
+
     .main-left{
       width:70%;
       padding:20px 0 0 0;
       ul{
         li{
           width:100%;
-          height:220px;
+          height:22rem;
           background-color: rgba(255,255,255,.5);
           margin:0 0 20px 0;
           display: flex;
@@ -108,8 +96,8 @@
           .item-img{
             padding:20px 0 20px 20px;
             img{
-              width:270px;
-              height:180px;
+              width:27rem;
+              height:18rem;
             }
           }
           .item-cont{

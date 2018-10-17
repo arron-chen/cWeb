@@ -2,22 +2,19 @@
     <header class="header">
       <div class="header-left"><img src="../../../static/images/icon_card.png"></div>
       <ul class="header-right">
-        <li v-for="(item,index) in lists" @click="routerPush(item.url)">{{item.text}}</li>
+        <li v-for="(item,index) in menuLists" @click="routerPush(item.url)">{{item.text}}</li>
       </ul>
     </header>
 </template>
 <script>
+  import {mapState} from 'vuex'
   export default{
     data(){
      return {
-       lists:[
-         {"id":1,"text":"首页","url":"/"},
-         {"id":2,"text":"笔记","url":"/note"},
-         {"id":3,"text":"魔方","url":"/cube"},
-         {"id":4,"text":"留言板","url":"/board"},
-         {"id":5,"text":"关于","url":"/about"},
-         ]
      }
+    },
+    computed:{
+      ...mapState(['menuLists'])
     },
     props:{
     },
@@ -31,7 +28,7 @@
   }
 </script>
 <style scoped lang="less">
-  @commonwidth:1100px;
+  @commonwidth:110rem;
   .header{
     width: @commonwidth;
     margin: 0 auto;

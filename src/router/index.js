@@ -1,11 +1,5 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import index from '@/pages/index'
-
-import about from '@/pages/about'
-import list from '@/pages/list'
-import work from '@/pages/works'
-import contact from '@/pages/contact'
 
 Vue.use(Router)
 
@@ -13,31 +7,14 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'index',
-      component: index,
-      children:[
-        {
-          path:'/list',
-          component:list
-        },
-        {
-          path:'/work',
-          component:work
-        },
-        {
-          path:'/about',
-          component:about
-        },
-
-        {
-          path:'/contact',
-          component:contact
-        }
+      name: 'index', component: () => import('@/pages/index'), // 异步组件 代码分割或惰性加载，有助于减少浏览器在初始渲染中下载的资源体积
+      children: [
+        {path: '/list', component: () => import('@/pages/list')},
+        {path: '/work', component: () => import('@/pages/works')},
+        {path: '/about', component: () => import('@/pages/about')},
+        {path: '/contact', component: () => import('@/pages/contact')}
       ]
     },
-    {
-      path:'*',
-      redirect:'/'
-    }
+    {path: '*', redirect: '/'}
   ]
 })

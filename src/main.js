@@ -8,6 +8,8 @@ import store from './store'
 import "./assets/css/normalize.css"
 Vue.config.productionTip = false
 
+import './util/rem'
+
 import axios from 'axios';
 Vue.prototype.$http = axios;
 

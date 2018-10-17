@@ -1,7 +1,7 @@
 const Mock = require('mockjs');
 const Random = Mock.Random;
 const produceNewsData = function() {
-  let cards = [];
+  let articles = [];
   let hot = [];
   let tags = [];
   let colors = ['rgb(208, 80, 146)','rgb(220, 183, 91)','rgb(76, 237, 55)','rgb(115, 192, 153)','rgb(90, 87, 104)','rgb(208, 30, 1)',
@@ -15,7 +15,7 @@ const produceNewsData = function() {
       author_name: Random.cname(), // Random.cname() 随机生成一个常见的中文姓名
       date: Random.date() + ' ' + Random.time() // Random.date()指示生成的日期字符串的格式,默认为yyyy-MM-dd；Random.time() 返回一个随机的时间字符串
     }
-    cards.push(newArticleObject)
+    articles.push(newArticleObject)
   }
   for (let i = 0; i < 5; i++) {
     let newArticleObject = {
@@ -41,7 +41,7 @@ const produceNewsData = function() {
   }
 
   return {
-    cards: cards,
+    articles: articles,
     hots: hot,
     tags:tags
   }

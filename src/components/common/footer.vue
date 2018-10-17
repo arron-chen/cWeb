@@ -1,15 +1,18 @@
 <template>
     <footer class="footer">
-      <span >&copy;2017-2019 Mr.Chen |<a href="http://www.miitbeian.gov.cn"> 粤ICP备18001531号</a>  </span>
+      <span > &copy; {{copyRight}}|<a href="http://www.miitbeian.gov.cn">{{RecordNumber}}</a>  </span>
     </footer>
 </template>
 <script>
+  import {mapState} from 'vuex'
   export default {
-
+    computed:{
+      ...mapState(['copyRight','RecordNumber'])
+    }
   }
 </script>
 <style lang="less" scoped>
-  @commonwidth:1100px;
+  @commonwidth:110rem;
   .footer{
     width: @commonwidth;
     margin:0 auto;
