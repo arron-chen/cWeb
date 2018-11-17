@@ -1,6 +1,6 @@
 # 个人博客网站cweb
 
-> http://www.tianxingzhe.vip/#/
+> www.arronclub.com
 
 ## Build Setup
 
