@@ -1,6 +1,6 @@
 # 个人博客网站cweb
 
-> personal website
+> http://www.tianxingzhe.vip/#/
 
 ## Build Setup
 
