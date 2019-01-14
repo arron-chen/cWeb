@@ -71,32 +71,36 @@
   }
 </script>
 <style scoped lang="less">
-  @commonwidth:110rem;
+  @commonwidth:70rem;
 .content{
   width:100%;height:auto;
   .main{
     display: flex;
     justify-content: space-between;
     margin:0 auto;
+    width:@commonwidth;
 
     .main-left{
       width:70%;
       padding:20px 0 0 0;
       ul{
+        margin-top:0;
+        padding:0;
         li{
           width:100%;
-          height:22rem;
+          height:12rem;
           background-color: rgba(255,255,255,.5);
           margin:0 0 20px 0;
           display: flex;
           justify-content: space-between;
           border-radius:3px;
           box-shadow: 5px 10px 10px rgba(0,0,0,.1);
+
           .item-img{
             padding:20px 0 20px 20px;
             img{
-              width:27rem;
-              height:18rem;
+              width:18rem;
+              height:10rem;
             }
           }
           .item-cont{
@@ -126,10 +130,10 @@
     }
     .main-right{
       width:30%;
-      padding:20px;
+      padding:20px 0 20px 20px;
       .right-search{
         position: relative;
-        padding:0 0 20px 0;
+        padding:0 0 10px 0;
         display: flex;
         justify-content: space-between;
         input{
@@ -140,6 +144,7 @@
           border:none;
           outline: none;
           text-indent: 10px;
+          box-sizing:border-box;
         }
         button{
           width:20%;
@@ -147,7 +152,14 @@
           border:none;
           border-top-right-radius: 5px;
           border-bottom-right-radius: 5px;
+          border-left-width: 1px;
+          border-left-color: #efefef;
+          border-left-style:solid;
           outline: none;
+          &:hover {
+            box-shadow: 5px 3px 8px rgba(0,0,0,.3);
+            cursor: pointer;
+          }
         }
       }
       .right-hot{
@@ -159,7 +171,7 @@
           font-weight: bold;
           font-size:16px;
           border-bottom:1px solid #efefef;
-          padding:10px 0 10px 10px;
+          padding:10px 0 0 10px;
         }
         ul{
           padding: 5px 10px;
@@ -199,9 +211,9 @@
         ul{
           li{
             display: inline-block;
-            border-radius: 5px;
+            border-radius: 0% 50%;
             margin:5px ;
-            padding:3px 10px;
+            padding:3px 15px;
             background: #42b983;
             color:#ffffff;
             label{}

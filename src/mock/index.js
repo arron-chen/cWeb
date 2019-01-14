@@ -6,7 +6,7 @@ const produceNewsData = function() {
   let tags = [];
   let colors = ['rgb(208, 80, 146)','rgb(220, 183, 91)','rgb(76, 237, 55)','rgb(115, 192, 153)','rgb(90, 87, 104)','rgb(208, 30, 1)',
     'rgb(223, 1, 131)','rgb(156, 240, 248)','rgb(157, 187, 218)','rgb(157, 187, 218)','rgb(157, 187, 218)','rgb(157, 187, 218)','rgba(247,133,0,1)']
-  for (let i = 0; i < 5; i++) {
+  for (let i = 0; i < 8; i++) {
     let newArticleObject = {
       id:i+1,
       title: Random.csentence(5, 30), //  Random.csentence( min, max )

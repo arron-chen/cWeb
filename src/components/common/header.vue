@@ -28,12 +28,12 @@
   }
 </script>
 <style scoped lang="less">
-  @commonwidth:110rem;
+  @commonwidth:70rem;
   .header{
     width: @commonwidth;
     margin: 0 auto;
-    height:6rem;
-    line-height:6rem;
+    height:50px;
+    line-height:50px;
     display: flex;
     justify-content: space-between;
     background: radial-gradient(circle,#666,#000);
@@ -47,6 +47,7 @@
     ul {
       height:50px;
       list-style:none;
+      margin:0;
       li{
         color: #fffdfb;
         float:left;

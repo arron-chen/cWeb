@@ -12,7 +12,7 @@
   }
 </script>
 <style lang="less" scoped>
-  @commonwidth:110rem;
+  @commonwidth:70rem;
   .footer{
     width: @commonwidth;
     margin:0 auto;
