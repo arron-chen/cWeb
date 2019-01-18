@@ -5,7 +5,7 @@
       <div class="main">
         <div class="main-left">
           <ul>
-            <li v-for="(item, index) in articles" :key="item.id">
+            <li v-for="(item) in articles" :key="item.id">
               <div class="item-img"> <img :src="item.thumbnail_pic"></div>
               <div class="item-cont">
                 <div class="item-cont-title">{{item.title}}</div>
@@ -23,7 +23,7 @@
           <div class="right-hot">
             <h3>热门文章</h3>
             <ul>
-              <li v-for="(item,index) in hots">
+              <li v-for="(item,index) in hots" :key="index">
                 <img :src="item.thumbnail_pic">
                 <div class="right-hot-cont">
                   <h3>{{item.title}}</h3>
@@ -35,7 +35,7 @@
           <div class="right-tag">
             <h3>云标签</h3>
             <ul>
-              <li v-for="(item,index) in tags" :style="{background:item.color}"><label>{{item.label}}</label><i>({{item.number}})</i></li>
+              <li v-for="(item,index) in tags" :key="index" :style="{background:item.color}"><label>{{item.label}}</label><i>({{item.number}})</i></li>
             </ul>
           </div>
         </div>
@@ -44,8 +44,6 @@
     </div>
 </template>
 <script>
-  import response from '@/components/common/response'
-
   import eheader from '@/components/common/header'
   import efooter from '@/components/common/footer'
 
@@ -61,7 +59,7 @@
       this.$store.dispatch('getCacheAll')
     },
     filters: {},
-    components:{response,eheader,efooter,ebanner},
+    components:{eheader,efooter,ebanner},
     computed:{
       ...mapState(['articles','hots','tags'])
     },
@@ -81,8 +79,8 @@
     width:@commonwidth;
 
     .main-left{
-      width:70%;
       padding:20px 0 0 0;
+      flex:1;
       ul{
         margin-top:0;
         padding:0;
@@ -129,7 +127,7 @@
       }
     }
     .main-right{
-      width:30%;
+      width:20rem;
       padding:20px 0 20px 20px;
       .right-search{
         position: relative;
@@ -209,6 +207,8 @@
           padding:10px 0 10px 10px;
         }
         ul{
+          margin:0;
+          padding:0;
           li{
             display: inline-block;
             border-radius: 0% 50%;

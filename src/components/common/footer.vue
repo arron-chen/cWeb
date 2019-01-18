@@ -22,6 +22,7 @@
     color:#fff;
     display: flex;
     justify-content: center;
+    align-items:center;
     span{
       color:#fff;
       a{

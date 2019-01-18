@@ -14,31 +14,42 @@ export default {
   /**{
     margin:0;padding:0;
   }*/
-  @media screen  and (max-width:600px){
-    .header {display: none !important;}
-    .footer {display: none !important;}
+  @media screen and (max-width:850px){
+    .content  .header{
+      width: 100vw !important;
+    }
+    .content .header .header-right {
+      display: none !important;
+    }
+    .content .header .category {
+      display: block !important;
+    }
+    .content .footer {
+      width: 100vw !important;
+      height: 10vh !important;
+    }
+    .main {
+      width:100vw !important;
+    }
     .main-right{display: none}
     .main-left{
-      width:100% !important;
+      width:100vw !important;
     }
-    .main-left ul li img{
-      width:20rem!important;
-      height:14rem!important;
+    .main-left ul {
+      width:100vw !important;
+      overflow: hidden;
     }
-    body {font-size:12px!important;}
-  }
-  @media screen and (min-width:600px) and (max-width:850px){
-    .main-right{display: none}
-    .main-left{
-      width:40rem !important;
+    .content .main .main-left ul li .item-img img {
+      width: 30vw !important;
+      height: 8rem !important; 
     }
-    body {font-size:13px!important;}
+    html {font-size:13px!important;}
   }
   @media screen and (min-width:800px) and (max-width:900px){
-    body {font-size:14px!important;}
+    html {font-size:14px!important;}
   }
   @media screen and (min-width:900px) {
-    body {font-size:16px!important;}
+    html{font-size:16px!important;}
   }
   html,body{
     width:100%;height:100%;
@@ -46,6 +57,10 @@ export default {
 
   body{
     background-color: #f2f2f2;
+    -webkit-overflow-scrolling:touch;
+    overflow-scrolling:touch;
+    overflow-y:scroll;
+    overflow-x:hidden;
   }
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
